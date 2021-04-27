@@ -1,0 +1,36 @@
+var w = window.innerWidth;
+var h = window.innerHeight;
+
+var player;
+
+function setup() {
+  createCanvas(w,h)
+  player = new player;
+}
+
+function player() {
+  //define initial position of player
+  this.x = w/2;
+  this.y - h/2;
+//gravitational force
+  this.gravity = 1;
+//oppositional force
+  this.lift = -3;
+//initial velocity
+  this.velocity = 0;
+  this.x = w / 2;
+  this.y = h / 2;
+  this.show = function () {
+    fill(color('red'));
+    rect(mouseX, 0, mouseY, 50);
+  //update this object
+  this.update = function() {
+    //add gravity to velocity
+    this.velocity += this.gravity;
+    //direction of pull
+    this.y += this.velocity;
+    //resistance to the velocity
+    this.velocity *= 0.9;
+  }
+  }
+}
